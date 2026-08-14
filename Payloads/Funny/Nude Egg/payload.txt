@@ -1,0 +1,55 @@
+REM ============================================
+REM Naked Egg Spam - Fast Respawn
+REM FOR FRIENDLY PRANKS ONLY
+REM ============================================
+
+REM Open Notepad with the egg
+DELAY 500
+GUI r
+DELAY 200
+STRING notepad
+ENTER
+DELAY 400
+STRING You have stumbled upon a naked egg.
+ENTER
+STRING
+ENTER
+STRING           ⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⢻⡝⢯⣍⠓⠦⣀⠀⠀⠀⠀⠀⠀
+ENTER
+STRING         ⠀⠀⠀⠀⢀⣼⣿⣿⢻⡜⢧⢊⠕⢂⠉⠰⡈⠱⢄⠀⠀⠀⠀
+ENTER
+STRING         ⠀⠀⠀⠀⣼⣿⣿⣿⡽⢧⣛⢎⠥⠊⠀⠀⠀⠀⠀⠌⢣⡀⠀⠀
+ENTER
+STRING         ⠀⠀⣼⣿⣿⣿⣯⢿⣹⠞⡼⣨⠁⠄⠀⠀⠀⠀⠀⠄⢳⡀⠀
+ENTER
+STRING         ⠀⣸⣿⣿⣿⣿⣯⣟⢮⣻⡱⢆⡍⡀⠀⠀⠀⠀⠀⠄⢂⢣⠀
+ENTER
+STRING         ⢀⣿⣿⣿⣿⣿⡿⣞⡟⣶⡹⢲⢰⠀⠀⠀⠀⠀⠌⠠⢸⡄
+ENTER
+STRING         ⢸⣿⣿⣿⣿⣿⡿⣽⢻⢶⣹⢣⠞⣄⠂⠤⠀⠀⠌⠠⢁⠂⡇
+ENTER
+STRING         ⢸⣿⣿⣿⣿⣿⣷⣻⠾⣜⢯⣚⠴⣉⠆⡄⢂⠐⡀⠆⡈⠔⡇
+ENTER
+STRING         ⢸⣿⣿⣿⣿⣿⡿⣽⣻⡝⣮⡝⣺⡐⢎⡐⢂⠡⡐⡀⠆⢬⡇
+ENTER
+STRING         ⠀⣿⣿⣿⣿⣿⣿⣯⢷⣫⢗⡾⣡⢝⡢⣑⢊⡔⠡⡐⢌⣸⠀
+ENTER
+STRING         ⠀⠸⣿⣿⣿⣿⣿⣾⢯⣷⢫⣞⡵⢎⡵⣈⠧⢌⡱⢨⢲⠃⠀
+ENTER
+STRING         ⠀⠀⠙⢿⣿⣿⣿⣿⣻⢾⣝⠾⣜⣏⠶⣩⠞⣌⢲⣵⠋⠀⠀
+ENTER
+STRING         ⠀⠀⠀⠈⠛⢿⣿⣿⣿⣻⣞⣟⣳⢮⡻⣥⢛⣬⠟⠁⠀⠀⠀
+ENTER
+STRING         ⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⢿⣿⣽⣳⣯⡷⠝⠋⠁⠀⠀⠀⠀⠀
+ENTER
+STRING
+ENTER
+STRING He is cold. And naked. Please give him a blanket.
+ENTER
+
+REM Now start the respawn loop (runs hidden, kills+reopens Notepad instantly)
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "while($true){Get-Process notepad -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep -Milliseconds 300; Start-Process notepad}
+ENTER
