@@ -1,6 +1,21 @@
-# 🥚 The Unclosable Egg Prank
+```
+▄▄▄▄▄▄    ▄▄▄▄▄       ▄▄▄▄▄▄     ▄▄▄▄▄▄  
+▄▀   ░  ▀▄ █     ▀▀▄  ▄▀   ░  ▀▄ ▄▀   ░  ▀▄
+█ ░▄▀▀▄ ░░ █ ░█▀▄   ▒ █ ░▄▀▀▄ ░░ █ ░▄▀▀▄ ░░
+█ ░▒  █░ ▒ █▒░█  █░ ▓ █ ░▒  █▄▀  █ ░▒  █░ ▒
+█░░▓  █░░▓ █▒▒▒▄▀░▒░█ █░░▓▄ ▀    █░░▓  █░░▓
+█▒░█  █▒▒█ █▒▒▒░░▒▄▀  █▒░▒▒▀▄    █▒░█  █▒▒█
+█▒▓▓  ▓▓▓█ █▒▓█▀▄▒▒█  █▒▓▓▀▀▀    █▒▓▓  ▓▓▓█
+█▓▓▒  ▒█▓▓ █▓▓█ █▓▒█  █▓▓▒  ▒▄▄  █▓▓▒  ▒█▓▓
+██▓░  ░██▒ ▒███ ▒▓██  ██▓░  ░██▒ ██▓░  ░██▒
+█ █▀▄▄▀██░ ░██▓ ░██▓  █ █▀▄▄▀██░ █ █▀▄▄▀██░
+▀▄      ▄  ▀▄█▒ ▀▄█▒  ▀▄      ▄  ▀▄      ▄ 
+  ▀▀▀▀▀▀     ▀░   ▀░    ▀▀▀▀▀▀     ▀▀▀▀▀▀  
+```
 
-A harmless BadUSB prank that opens Notepad and floods it with 🥚 eggs. If the user closes Notepad, it respawns. Lasts until the script is killed or the computer is restarted.
+# 🥚 Naked Egg Prank
+
+A harmless BadUSB prank that opens Notepad with a naked egg and respawns it as fast as possible when closed.
 
 ## ⚠️ Disclaimer
 
@@ -19,9 +34,9 @@ A harmless BadUSB prank that opens Notepad and floods it with 🥚 eggs. If the 
 ## 📋 What It Does
 
 1. Opens Notepad
-2. Fills it with a wall of 🥚 emojis
+2. Fills it with an ASCII egg message
 3. Starts a hidden PowerShell loop that:
-   - Closes any Notepad window after 5 seconds
+   - Closes any Notepad window after a few seconds
    - Opens a new one immediately
    - Repeats forever (until killed)
 
@@ -52,13 +67,9 @@ Or just unplug the Ducky quickly and pretend nothing happened.
 
 ## 🎨 Variations
 
-- Replace 🥚 with 💀, 🐸, 🍆, 🦆, or any emoji
-- Add a custom message:
-  ```
-  STRING Hey {name}! You got egged! 🥚
-  ```
-- Change the respawn timer (currently 5 seconds)
-- Add a rickroll URL in the text
+- Replace the message with anything funny
+- Adjust the respawn timer (currently a few hundred milliseconds)
+- Combine with other pranks
 
 ## ⚖️ Legal
 
