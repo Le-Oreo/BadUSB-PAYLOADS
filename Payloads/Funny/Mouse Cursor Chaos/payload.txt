@@ -1,0 +1,10 @@
+REM ============================================
+REM Mouse Cursor Chaos Prank
+REM FOR FRIENDLY PRANKS ONLY
+REM ============================================
+REM Makes the mouse cursor move randomly and laggy
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "Add-Type -AssemblyName System.Windows.Forms;Add-Type -AssemblyName System.Drawing;$r=New-Object System.Random;while($true){[System.Windows.Forms.Cursor]::Position=New-Object System.Drawing.Point($r.Next(0,[System.Windows.Forms.SystemInformation]::VirtualScreen.Width),$r.Next(0,[System.Windows.Forms.SystemInformation]::VirtualScreen.Height));Start-Sleep -Milliseconds 100}"
