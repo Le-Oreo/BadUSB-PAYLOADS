@@ -1,0 +1,10 @@
+REM ============================================
+REM Full-Screen Fake BSOD Prank
+REM FOR FRIENDLY PRANKS ONLY
+REM ============================================
+REM Downloads image and displays it fullscreen, no borders, can't close
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "$u='https://www.silicon.co.uk/wp-content/uploads/2016/10/FakeBsoD.png'; $p=$env:TEMP+'\bsod.png'; (New-Object Net.WebClient).DownloadFile($u, $p); Add-Type -AssemblyName System.Windows.Forms; Add-Type -AssemblyName System.Drawing; $f=New-Object System.Windows.Forms.Form; $f.WindowState='Maximized'; $f.FormBorderStyle='None'; $f.BackColor=[System.Drawing.Color]::Black; $f.TopMost=$true; $f.KeyPreview=$true; $f.Add_KeyDown({if($_.Alt -and $_.KeyCode -eq 'F4'){$_.Handled=$true}; if($_.Control -and $_.Alt -and $_.KeyCode -eq 'Delete'){$f.Close()}}); $b=[System.Drawing.Image]::FromFile($p); $box=$f.ClientSize; $ratio=[Math]::Min($box.Width/$b.Width, $box.Height/$b.Height); $w=[int]($b.Width*$ratio); $h=[int]($b.Height*$ratio); $i=New-Object System.Windows.Forms.PictureBox; $i.Image=$b; $i.SizeMode='StretchImage'; $i.Size=New-Object System.Drawing.Size($w,$h); $i.Location=New-Object System.Drawing.Point(($box.Width-$w)/2,($box.Height-$h)/2); $f.Controls.Add($i); $f.Show(); while($f.Visible){[System.Windows.Forms.Application]::DoEvents(); Start-Sleep -Milliseconds 50}"
